@@ -11,8 +11,10 @@
 
     .content {
         padding-top: 2.125rem;
-        display: grid;
-        place-items: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
         text-align: center;
 
         h2 {
@@ -30,25 +32,25 @@
         }
 
         .body {
-            display: grid;
-            place-items: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
             padding: 2rem 0 0;
 
             .imagesTab {
                 .image {
-                    // width: 10.6rem;
                     height: 14rem;
                     margin-bottom: 1.6rem;
                     display: none;
                     opacity: 0;
-    
+
                     &.active {
                         display: block;
                         animation: fadeIn .8s linear forwards;
                     }
-    
+
                     img {
-                        // width: 100%;
                         height: 100%;
                     }
                 }
@@ -96,7 +98,7 @@
                                 font-family: 'Bellefair', serif;
                                 font-weight: 100;
                             }
-    
+
                             h1 {
                                 font-size: 1.5rem;
                                 color: #fff;
@@ -105,7 +107,7 @@
                                 font-family: 'Bellefair', serif;
                                 padding-bottom: 1rem;
                             }
-    
+
                             p {
                                 line-height: 25px;
                                 font-weight: 100px;
@@ -121,7 +123,7 @@
                 }
 
                 @keyframes fadeIn {
-                    to{
+                    to {
                         opacity: 1;
                     }
                 }
@@ -131,9 +133,13 @@
 }
 
 
+// Tablet
 
 @media (min-width: 768px) {
     .crew {
+        overflow: hidden;
+        height: 100vh;
+
         .content {
             padding-top: 2.5rem;
 
@@ -147,39 +153,26 @@
 
             .body {
                 padding: 3.75rem 0 0;
-                grid-template-rows: .3fr .8fr;
                 gap: 2.5rem;
+                flex-direction: column-reverse;
+                overflow: hidden;
 
-
-                // Fix this
 
                 .imagesTab {
-                    grid-row: 2/3;
-                    overflow: hidden;
+                    .image {
+                        height: 33rem;
+                        margin-bottom: -1.6rem;
 
-                        .image {
-                            position: relative;
-                            top: 5rem;
-                            // left: 0;
-                            // width: 28.5rem;
-                            // height: 35.75rem;
-                            height: 35rem;
-                            margin-bottom: -1.6rem;
-                            margin-top: 2.5rem;
-            
-                            img {
-                                width: 100%;
-                                max-height: 100%;
-                            }
+                        img {
+                            width: 100%;
+                            max-height: 100%;
                         }
+                    }
                 }
 
                 .info {
-                    grid-row: 1/2;
                     display: flex;
                     flex-direction: column-reverse;
-                    // test
-                    // height: 14.5rem;
 
                     .tabs {
                         gap: 1rem;
@@ -188,7 +181,7 @@
                     .contentTab {
                         .description {
                             width: 28.625rem;
-                            
+
                             .text {
                                 .role {
                                     font-size: 1.5rem;
@@ -208,6 +201,97 @@
                     }
                 }
             }
+        }
+    }
+}
+
+
+
+// Desktop
+
+@media (min-width: 1440px) {
+    .crew {
+        .content {
+            padding-left: 8.875rem;
+            // justify-content: flex-start;
+            align-items: flex-start;
+            // display: grid;
+            // place-items: center;
+
+            h2 {
+                font-size: 1.75rem;
+            }
+
+            .body {
+                text-align: left;
+                justify-content: flex-start;
+                align-items: flex-start;
+                flex-direction: row-reverse;
+                gap: 5rem;
+                overflow: visible;
+
+                .imagesTab {
+                    .image {
+                        position: relative;
+                        left: 3rem;
+                        width: 100%;
+                        height: 44rem;
+                        margin-bottom: -1.6rem;
+                    }
+                }
+
+                .info {
+                    .tabs {
+                        justify-content: flex-start;
+                        width: 8.25rem;
+
+                        .tab {
+                            width: .9rem;
+                            height: .9rem;
+                        }
+                    }
+
+                    .contentTab {
+                        .description {
+                            padding-top: 9.6rem;
+        
+                            .text {
+                                padding-bottom: 7.5rem;
+
+                                .role {
+                                    font-size: 2rem;
+                                    padding-bottom: 1rem;
+                                }
+
+                                h1 {
+                                    font-size: 3.5rem;
+                                    width: 40.5rem;
+                                    height: 4rem;
+                                    margin-bottom: 1.6875rem;
+                                }
+
+                                p {
+                                    font-size: 1.125rem;
+                                    line-height: 32px;
+                                    width: 27.75rem;
+                                    // height: 8rem;
+                                }
+                            }
+                        }
+                    }
+
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 1450px) {
+    .crew {
+        .content {
+            padding-left: 8.875rem;
+            // justify-content: flex-start;
+            align-items: center;
         }
     }
 }
