@@ -3,11 +3,14 @@
     font-family: 'Barlow Condensed', sans-serif;
     font-weight: 100;
     background-image: url("./assets/destination/background-destination-mobile.jpg");
+    background-color: rgb(0, 15, 28);
     background-repeat: no-repeat;
     background-size: 100% 100%;
     padding: 0 1.5rem;
+    min-height: 100vh;
 
     .content {
+        padding-top: 2.125rem;
         display: grid;
         place-items: center;
         text-align: center;
@@ -19,7 +22,7 @@
             letter-spacing: 2.7px;
             font-weight: 100;
             color: #fff;
-    
+
             span {
                 padding-right: 1.125rem;
                 opacity: .5;
@@ -27,26 +30,30 @@
         }
 
         .body {
-            display: grid;
-            place-items: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             padding: 2rem 0 0;
-    
+
             .image {
                 width: 10.6rem;
                 height: 10.6rem;
                 margin-bottom: 1.6rem;
                 display: none;
+                opacity: 0;
 
                 &.active {
                     display: block;
+                    animation: fadeIn .8s linear forwards;
                 }
-    
+
                 img {
                     width: 100%;
                     height: 100%;
                 }
             }
-    
+
             .info {
                 .tabs {
                     display: flex;
@@ -61,11 +68,9 @@
                         position: relative;
                         letter-spacing: 2.36px;
                         font-weight: 50;
-        
-                        &.active {
-                            color: #fff;
-                        }
-                        &.active::after {
+                        transition: all .5s;
+
+                        &::after {
                             content: "";
                             width: 100%;
                             height: .18rem;
@@ -73,8 +78,24 @@
                             position: absolute;
                             bottom: -.5rem;
                             left: 0;
+                            opacity: 0;
+                        }
+
+                        &:not(.active):hover::after {
+                            opacity: 1;
+                            background-color: #ffffff75;
+                        }
+
+                        &.active {
+                            color: #fff;
+                        }
+
+                        &.active::after {
+                            opacity: 1;
                         }
                     }
+
+
                 }
 
                 .contentTab {
@@ -82,11 +103,12 @@
                     .description {
                         padding-top: 1.9rem;
                         display: none;
-    
+                        opacity: 0;
+
                         .text {
                             padding-bottom: 2rem;
                             border-bottom: 1px solid #383B4B;
-    
+
                             h1 {
                                 font-size: 3.6rem;
                                 color: #fff;
@@ -94,23 +116,23 @@
                                 text-transform: uppercase;
                                 font-family: 'Bellefair', serif;
                             }
-    
+
                             p {
                                 line-height: 25px;
                                 font-weight: 100px;
                             }
                         }
-    
+
                         .numbers {
                             padding-top: 2rem;
-    
+
                             p {
                                 text-transform: uppercase;
                                 padding-bottom: 2rem;
                                 letter-spacing: 2.36px;
                             }
-            
-                            span {                            
+
+                            span {
                                 padding-top: 0.75rem;
                                 display: block;
                                 color: #fff;
@@ -121,11 +143,181 @@
 
                         &.active {
                             display: block;
+                            animation: fadeIn .8s .2s linear forwards;
                         }
                     }
 
                 }
-                
+
+                @keyframes fadeIn {
+                    to{
+                        opacity: 1;
+                    }
+                }
+
+            }
+        }
+    }
+}
+
+
+
+
+// Media Query
+
+// Tablet
+
+@media (min-width: 768px) {
+    .destination {
+        background-image: url("./assets/destination/background-destination-tablet.jpg");
+
+        .content {
+            padding-top: 2.5rem;
+
+            h2 {
+                font-size: 1.25rem;
+                place-self: start;
+                padding-left: .875rem;
+            }
+
+            .body {
+                padding: 3.75rem 0 0;
+
+                .image {
+                    width: 18.75rem;
+                    height: 18.75rem;
+                    margin-bottom: 3.3rem;
+                }
+
+                .info {
+                    .tabs {
+                        height: 2.125rem;
+                        gap: 2.18rem;
+
+                        .tab {
+                            font-size: 1rem;
+                            letter-spacing: 2.7px;
+                        }
+                    }
+
+                    .contentTab {
+                        .description {
+                            padding-top: 2rem;
+                            display: none;
+
+                            .text {
+                                padding-bottom: 3rem;
+                                border-bottom: 1px solid #383B4B;
+
+                                h1 {
+                                    font-size: 5rem;
+                                    padding-bottom: 0.5rem;
+                                }
+
+                                p {
+                                    width: 36rem;
+                                    height: 5.25rem;
+                                    font-size: 1rem;
+                                    line-height: 28px;
+                                }
+                            }
+
+
+                            // Here fix this
+                            .numbers {
+                                padding-top: 1.8rem;
+                                display: flex;
+                                justify-content: center;
+                                gap: 1rem;
+
+                                p {
+                                    text-transform: uppercase;
+                                    padding-bottom: 2rem;
+                                    letter-spacing: 2.36px;
+                                    width: 50%;
+                                }
+
+                                span {
+                                    padding-top: 0.75rem;
+                                    display: block;
+                                    color: #fff;
+                                    font-size: 1.75rem;
+                                    font-family: 'Bellefair', serif;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+// Desktop
+
+
+@media (min-width: 1440px) {
+    .destination {
+        background-image: url("./assets/destination/background-destination-desktop.jpg");
+
+        .content {
+            padding-top: 4.75rem;
+
+            h2 {
+                font-size: 1.75rem;
+                padding-left: 10rem;
+                letter-spacing: 4.72px;
+            }
+
+            .body {
+                padding-top: 4rem;
+                flex-direction: row;
+                gap: 9.8rem;
+                width: 65rem;
+
+                .image {
+                    width: 27.8rem;
+                    height: 27.8rem;
+                    // margin-bottom: 3.3rem;
+                    margin-top: 2rem;
+                }
+
+                .info {
+                    width: 27.8rem;
+                    text-align: left;
+
+                    .tabs {
+                        justify-content: flex-start;
+                    }
+
+                    .contentTab {
+                        .description {
+
+                            .text {
+
+                                h1 {
+                                }
+
+                                p {
+                                    width: 27.75rem;
+                                }
+                            }
+
+                            .numbers {
+                                justify-content: flex-start;
+
+                                p {
+                                    width: 50%;
+                                }
+
+                                span {
+                                }
+                            }
+                        }
+                    }
+                }
             }
         }
     }

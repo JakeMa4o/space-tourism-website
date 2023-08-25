@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import DestinationCSS from "./Destination.module.scss";
 import Header from "../../components/header/Header";
 // import Tabs from "../../components/tabs/Tabs";
@@ -7,9 +8,11 @@ import europa from "./assets/destination/image-europa.png";
 import titan from "./assets/destination/image-titan.png";
 import { useState } from "react";
 
-const Destination = () => {
+const Destination = ({pathNote, setPathNote}) => {
+  setPathNote(1);
 
   const [toggleState, setToggleState] = useState(0);
+
 
   const toggleTab = (index) => {
     setToggleState(index);
@@ -17,12 +20,11 @@ const Destination = () => {
 
   return (
     <div className={DestinationCSS.destination}>
-      <Header />
+      <Header pathNote={pathNote} setPathNote={setPathNote}/>
       <div className={DestinationCSS.content}>
         <h2><span>01</span>Pick your destination</h2>
 
         <div className={DestinationCSS.body}>
-
 
           <div className={DestinationCSS.imagesTab}>
             <div className={toggleState === 0 ? `${DestinationCSS.image} ${DestinationCSS.active}` : DestinationCSS.image}>
