@@ -1,4 +1,6 @@
-# React + Vite
+# Space tourism website
+
+![space-tour-website](https://github.com/JakeMa4o/space-tourism-website/assets/83866905/2784b95d-310c-4613-aa5e-7074e8c32be7)
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
