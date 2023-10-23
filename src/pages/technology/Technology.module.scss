@@ -1,6 +1,6 @@
 .technology {
     min-height: 100vh;
-    background-color: rgb(0, 15, 28);
+    background-color: #0b0d19;
     padding: 0 1.5rem;
     color: #D0D6F9;
     background-image: url("./assets/technology/background-technology-mobile.jpg");
@@ -8,6 +8,47 @@
     background-size: 100% 100%;
     font-family: 'Barlow Condensed', sans-serif;
     font-weight: 100;
+    display: grid;
+    place-items: center;
+
+    &::before {
+        content: "";
+        width: 100%;
+        height: 100%;
+        background-color: #1a1e3a;
+        position: absolute;
+        top: 0;
+        left: 0;
+        animation: fadeInBg1 1s ease forwards;
+        z-index: 300;
+        transform: translateX(200rem);
+    }
+
+    @keyframes fadeInBg1 {
+        50% {
+            transform: translateX(0);
+        }
+        to {
+            transform: translateX(-200rem);
+        }
+    }
+
+    &::after {
+        content: "";
+        width: 100%;
+        height: 100%;
+        background-color: #0b0d19;
+        position: absolute;
+        top: 0;
+        left: 0;
+        animation: fadeInBg 1.5s .3s ease forwards;
+    }
+
+    @keyframes fadeInBg {
+        to {
+            transform: translateX(-200rem);
+        }
+    }
 
     .content {
         padding-top: 2.125rem;
@@ -42,11 +83,11 @@
                 margin-bottom: 1.6rem;
                 display: none;
                 margin: 0 -1.5rem;
-                opacity: 0;
+                // opacity: 0;
 
                 &.active {
                     display: block;
-                    animation: fadeIn .8s linear forwards;
+                    // animation: fadeIn .8s linear forwards;
                 }
 
                 img {
@@ -93,7 +134,7 @@
                 .contentTab {
                     .description {
                         display: none;
-                        opacity: 0;
+                        // opacity: 0;
 
                         .text {
                             padding-bottom: 2rem;
@@ -115,7 +156,7 @@
 
                         &.active {
                             display: block;
-                            animation: fadeIn .8s .2s linear forwards;
+                            // animation: fadeIn .8s .2s linear forwards;
                         }
                     }
                 }

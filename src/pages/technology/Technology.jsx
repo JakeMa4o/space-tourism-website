@@ -12,10 +12,13 @@ import spaceCapsulePortrait from "./assets/technology/image-space-capsule-portra
 import spaceport from "./assets/technology/image-spaceport-landscape.jpg";
 import spaceportProtrait from "./assets/technology/image-spaceport-portrait.jpg";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const Technology = ({ pathNote, setPathNote }) => {
-  setPathNote(3);
+
+  useEffect(() => {
+    setPathNote(3);
+  }, [])
 
   const [toggleState, setToggleState] = useState(0);
 

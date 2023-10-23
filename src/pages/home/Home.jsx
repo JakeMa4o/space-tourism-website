@@ -2,9 +2,15 @@
 import HomeCSS from "./Home.module.scss";
 import Header from "../../components/header/Header";
 import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
+
+import video from "./space.mp4";
 
 const Home = ({ pathNote, setPathNote }) => {
-    setPathNote(0);
+
+    useEffect(() => {
+        setPathNote(0);
+    }, [])
 
     const navigate = useNavigate();
 
@@ -15,6 +21,9 @@ const Home = ({ pathNote, setPathNote }) => {
 
     return (
         <div className={HomeCSS.home}>
+            <video autoPlay muted loop className={HomeCSS.myVideo}>
+                <source src={video} type="video/mp4" />
+            </video>
             <Header pathNote={pathNote} setPathNote={setPathNote} />
             <div className={HomeCSS.content}>
                 <div className={HomeCSS.text}>

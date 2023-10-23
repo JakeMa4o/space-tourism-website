@@ -7,11 +7,13 @@ import douglas from "./assets/crew/image-douglas-hurley.png";
 import mark from "./assets/crew/image-mark-shuttleworth.png";
 import victor from "./assets/crew/image-victor-glover.png";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 
 const Crew = ({pathNote, setPathNote}) => {
-  setPathNote(2);
+  useEffect(() => {
+    setPathNote(2);
+  }, [])
 
   const [toggleState, setToggleState] = useState(0);
 
