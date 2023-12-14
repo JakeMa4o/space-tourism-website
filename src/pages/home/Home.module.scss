@@ -47,18 +47,8 @@
         position: absolute;
         top: 0;
         left: 0;
-        animation: fadeInBg1 1s ease forwards;
+        animation: fadeInBg .5s .1s ease forwards;
         z-index: 300;
-        transform: translateX(200rem);
-    }
-
-    @keyframes fadeInBg1 {
-        50% {
-            transform: translateX(0);
-        }
-        to {
-            transform: translateX(-200rem);
-        }
     }
 
     &::after {
@@ -69,12 +59,12 @@
         position: absolute;
         top: 0;
         left: 0;
-        animation: fadeInBg 1s .3s ease forwards;
+        animation: fadeInBg .5s .4s ease forwards;
     }
 
     @keyframes fadeInBg {
         to {
-            transform: translateX(-200rem);
+            transform: translateX(-100%);
         }
     }
 

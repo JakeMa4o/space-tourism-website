@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import CrewCSS from "./Crew.module.scss";
 import Header from "../../components/header/Header";
+import NextSection from "../../components/nextSection/NextSection";
 
 import anousheh from "./assets/crew/image-anousheh-ansari.png";
 import douglas from "./assets/crew/image-douglas-hurley.png";
@@ -10,7 +11,7 @@ import victor from "./assets/crew/image-victor-glover.png";
 import { useEffect, useState } from "react";
 
 
-const Crew = ({pathNote, setPathNote}) => {
+const Crew = ({ pathNote, setPathNote }) => {
   useEffect(() => {
     setPathNote(2);
   }, [])
@@ -24,7 +25,7 @@ const Crew = ({pathNote, setPathNote}) => {
 
   return (
     <div className={CrewCSS.crew}>
-      <Header pathNote={pathNote} setPathNote={setPathNote}/>
+      <Header pathNote={pathNote} setPathNote={setPathNote} />
       <div className={CrewCSS.content}>
         <h2><span>02</span>Meet your crew</h2>
 
@@ -88,6 +89,7 @@ const Crew = ({pathNote, setPathNote}) => {
             </div>
           </div>
         </div>
+        {toggleState === 3 && <NextSection section="Technology" direction="/technology" setPathNote={setPathNote} />}
       </div>
     </div>
   )

@@ -7,9 +7,9 @@ import mars from "./assets/destination/image-mars.png";
 import europa from "./assets/destination/image-europa.png";
 import titan from "./assets/destination/image-titan.png";
 import { useEffect, useState } from "react";
+import NextSection from "../../components/nextSection/NextSection";
 
 const Destination = ({ pathNote, setPathNote }) => {
-  
   useEffect(() => {
     setPathNote(1);
   }, [])
@@ -25,22 +25,21 @@ const Destination = ({ pathNote, setPathNote }) => {
       <Header pathNote={pathNote} setPathNote={setPathNote} />
       <div className={DestinationCSS.content}>
         <h2><span>01</span>Pick your destination</h2>
-
         <div className={DestinationCSS.body}>
 
           <div className={DestinationCSS.imagesTab}>
             <div className={DestinationCSS.imagesContainer}>
               <div className={toggleState === 0 ? `${DestinationCSS.image} ${DestinationCSS.active}` : DestinationCSS.image}>
-                <img src={moon} alt="moon" style={{transform: `translateX(-${toggleState * 100}%)`}} />
+                <img src={moon} alt="moon" style={{ transform: `translateX(-${toggleState * 100}%)` }} />
               </div>
               <div className={toggleState === 1 ? `${DestinationCSS.image} ${DestinationCSS.active}` : DestinationCSS.image}>
-                <img src={mars} alt="mars" style={{transform: `translateX(-${toggleState * 100}%)`}}/>
+                <img src={mars} alt="mars" style={{ transform: `translateX(-${toggleState * 100}%)` }} />
               </div>
               <div className={toggleState === 2 ? `${DestinationCSS.image} ${DestinationCSS.active}` : DestinationCSS.image}>
-                <img src={europa} alt="europa" style={{transform: `translateX(-${toggleState * 100}%)`}}/>
+                <img src={europa} alt="europa" style={{ transform: `translateX(-${toggleState * 100}%)` }} />
               </div>
               <div className={toggleState === 3 ? `${DestinationCSS.image} ${DestinationCSS.active}` : DestinationCSS.image}>
-                <img src={titan} alt="titan" style={{transform: `translateX(-${toggleState * 100}%)`}}/>
+                <img src={titan} alt="titan" style={{ transform: `translateX(-${toggleState * 100}%)` }} />
               </div>
             </div>
           </div>
@@ -100,13 +99,10 @@ const Destination = ({ pathNote, setPathNote }) => {
                 </div>
               </div>
 
-
             </div>
           </div>
         </div>
-
-
-
+        {toggleState === 3 && <NextSection section="Crew" direction="/crew" setPathNote={setPathNote} />}
       </div>
     </div>
   )

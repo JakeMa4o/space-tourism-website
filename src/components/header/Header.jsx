@@ -26,7 +26,7 @@ const Header = ({ pathNote, setPathNote }) => {
 
   return (
     <header className={HeaderCSS.header}>
-      <img className={HeaderCSS.logo} src={logo} alt="" />
+      <img className={HeaderCSS.logo} src={logo} alt="logo" onClick={() => navigate("/")}/>
       <div className={HeaderCSS.headerLine}></div>
       <img className={HeaderCSS.hamburger} src={hamburger} alt="" onClick={openMenu} />
 
