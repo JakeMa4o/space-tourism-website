@@ -3,10 +3,10 @@ import CrewCSS from "./Crew.module.scss";
 import Header from "../../components/header/Header";
 import NextSection from "../../components/nextSection/NextSection";
 
-import anousheh from "./assets/crew/image-anousheh-ansari.png";
-import douglas from "./assets/crew/image-douglas-hurley.png";
-import mark from "./assets/crew/image-mark-shuttleworth.png";
-import victor from "./assets/crew/image-victor-glover.png";
+import anousheh from "./assets/crew/image-anousheh-ansari.webp";
+import douglas from "./assets/crew/image-douglas-hurley.webp";
+import mark from "./assets/crew/image-mark-shuttleworth.webp";
+import victor from "./assets/crew/image-victor-glover.webp";
 
 import { useEffect, useState } from "react";
 

@@ -2,10 +2,10 @@
 import DestinationCSS from "./Destination.module.scss";
 import Header from "../../components/header/Header";
 // import Tabs from "../../components/tabs/Tabs";
-import moon from "./assets/destination/image-moon.png";
-import mars from "./assets/destination/image-mars.png";
-import europa from "./assets/destination/image-europa.png";
-import titan from "./assets/destination/image-titan.png";
+import moon from "./assets/destination/image-moon.webp";
+import mars from "./assets/destination/image-mars.webp";
+import europa from "./assets/destination/image-europa.webp";
+import titan from "./assets/destination/image-titan.webp";
 import { useEffect, useState } from "react";
 import NextSection from "../../components/nextSection/NextSection";
 

@@ -3,7 +3,7 @@
     background-color: #0b0d19;
     padding: 0 1.5rem;
     color: #D0D6F9;
-    background-image: url("./assets/crew/background-crew-mobile.jpg");
+    background-image: url("./assets/crew/background-crew-mobile.webp");
     background-repeat: no-repeat;
     background-size: 100% 100%;
     font-family: 'Barlow Condensed', sans-serif;
@@ -206,6 +206,7 @@
     .crew {
         overflow: hidden;
         height: 100vh;
+        background-image: url("./assets/crew/background-crew-tablet.webp");
 
         .content {
             padding-top: 2.5rem;
@@ -278,6 +279,7 @@
 
 @media (min-width: 1440px) {
     .crew {
+        background-image: url("./assets/crew/background-crew-desktop.webp");
         .content {
             padding-left: 8.875rem;
             // justify-content: flex-start;

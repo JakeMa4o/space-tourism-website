@@ -5,12 +5,12 @@ import Media from 'react-media';
 import TechnologyCSS from "./Technology.module.scss";
 import Header from "../../components/header/Header";
 
-import launchVehicle from "./assets/technology/image-launch-vehicle-landscape.jpg";
-import launchVehiclePortrait from "./assets/technology/image-launch-vehicle-portrait.jpg"
-import spaceCapsule from "./assets/technology/image-space-capsule-landscape.jpg";
-import spaceCapsulePortrait from "./assets/technology/image-space-capsule-portrait.jpg";
-import spaceport from "./assets/technology/image-spaceport-landscape.jpg";
-import spaceportProtrait from "./assets/technology/image-spaceport-portrait.jpg";
+import launchVehicle from "./assets/technology/image-launch-vehicle-landscape.webp";
+import launchVehiclePortrait from "./assets/technology/image-launch-vehicle-portrait.webp"
+import spaceCapsule from "./assets/technology/image-space-capsule-landscape.webp";
+import spaceCapsulePortrait from "./assets/technology/image-space-capsule-portrait.webp";
+import spaceport from "./assets/technology/image-spaceport-landscape.webp";
+import spaceportProtrait from "./assets/technology/image-spaceport-portrait.webp";
 
 import { useEffect, useState } from "react";
 
