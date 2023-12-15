@@ -21,7 +21,7 @@ const Home = ({ pathNote, setPathNote }) => {
 
     return (
         <div className={HomeCSS.home}>
-            <video autoPlay muted loop className={HomeCSS.myVideo}>
+            <video autoPlay muted loop playsInline className={HomeCSS.myVideo}>
                 <source src={video} type="video/mp4" />
             </video>
             <Header pathNote={pathNote} setPathNote={setPathNote} />

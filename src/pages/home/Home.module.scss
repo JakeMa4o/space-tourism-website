@@ -1,28 +1,47 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed&family=Bellefair&display=swap');
 
+
+// test subject
+
 .myVideo {
-    position: fixed;
-    top: 0;
-    left: 0;
-    // left: -100rem;
-    // transform: translate(-50%,-50%);
-    // right: 0;
-    // bottom: 0;
-    width: 100%;
-    height: 100%;
-    // height: 30rem;
-    // width: 30rem;
-    object-fit: cover;
+    // position: fixed;
+    position: absolute;
+    // top: 0;
+    // left: 0;
+    right: 0;
+    bottom: 0;
+    // width: 100%;
+    // height: 100%;
+    aspect-ratio: 16 / 9;
+
+    // object-fit: cover;
     transform: rotateY(180deg);
     -webkit-transform:rotateY(180deg); /* Safari and Chrome */
     -moz-transform:rotateY(180deg);
 }
 
-@media screen and (min-width: 768px) {
+@media (min-aspect-ratio: 16 / 9) {
     .myVideo {
-        left: 0;
+        width: 100%;
+        height: auto;
     }
 }
+@media (max-aspect-ratio: 16 / 9) {
+    .myVideo {
+        width: auto;
+        height: 100%;
+        bottom: auto;
+        right: auto;
+    }
+}
+
+// test subject
+
+// @media screen and (min-width: 768px) {
+//     .myVideo {
+//         left: 0;
+//     }
+// }
 
 
 .home {

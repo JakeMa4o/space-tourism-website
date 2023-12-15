@@ -93,6 +93,7 @@ const Destination = ({ pathNote, setPathNote }) => {
                   <h1>Titan</h1>
                   <p>The only moon known to have a dense atmosphere other than Earth, Titan is a home away from home (just a few hundred degrees colder!). As a bonus, you get striking views of the Rings of Saturn.</p>
                 </div>
+                <NextSection section="Crew" direction="/crew" setPathNote={setPathNote} />
                 <div className={DestinationCSS.numbers}>
                   <p>avg. distance <span>1.6 BIL. km</span></p>
                   <p>est travel days <span>7 years</span></p>
@@ -102,7 +103,7 @@ const Destination = ({ pathNote, setPathNote }) => {
             </div>
           </div>
         </div>
-        {toggleState === 3 && <NextSection section="Crew" direction="/crew" setPathNote={setPathNote} />}
+        {/* {toggleState === 3 && <NextSection section="Crew" direction="/crew" setPathNote={setPathNote} />} */}
       </div>
     </div>
   )
