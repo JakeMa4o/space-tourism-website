@@ -26,6 +26,7 @@ const Home = ({ pathNote, setPathNote}) => {
             <div className={isLoading? HomeCSS.loaderWrapper : `${HomeCSS.loaderWrapper} ${HomeCSS.loaded}`}>
                 <div className={HomeCSS.homeLoader}></div>
             </div>
+            <div className={HomeCSS.videoFilter}></div>
             <video autoPlay muted loop playsInline className={HomeCSS.myVideo} onCanPlay={() => setIsLoading(false)}>
                 <source src={video} type="video/mp4" />
             </video>

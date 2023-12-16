@@ -9,6 +9,7 @@ import anousheh from "./assets/crew/image-anousheh-ansari.webp";
 import douglas from "./assets/crew/image-douglas-hurley.webp";
 import mark from "./assets/crew/image-mark-shuttleworth.webp";
 import victor from "./assets/crew/image-victor-glover.webp";
+import right from "./assets/crew/right-arrow.png";
 
 import { useEffect, useState, useRef } from "react";
 import Loader from "../../components/loader/Loader";
@@ -16,18 +17,32 @@ import Loader from "../../components/loader/Loader";
 
 const Crew = ({ pathNote, setPathNote }) => {
 
+  const [toggleState, setToggleState] = useState(0);
+
+  const toggleTab = (index) => {
+    setToggleState(index);
+  }
+
+  const goNext = () => {
+    if(toggleState === 3) {
+      return;
+    }
+    setToggleState(prevVal => prevVal + 1);
+  }
+
+  const goPrev = () => {
+    if(toggleState === 0) {
+      return;
+    }
+    setToggleState(prevVal => prevVal - 1);
+  }
+
   const wrapperRef = useRef(null);
   const imagesLoad = useOnLoadImages(wrapperRef)
 
   useEffect(() => {
     setPathNote(2);
   }, [])
-
-  const [toggleState, setToggleState] = useState(0);
-
-  const toggleTab = (index) => {
-    setToggleState(index);
-  }
 
 
   return (
@@ -59,6 +74,10 @@ const Crew = ({ pathNote, setPathNote }) => {
               <div className={toggleState === 1 ? `${CrewCSS.tab} ${CrewCSS.active}` : CrewCSS.tab} onClick={() => toggleTab(1)}></div>
               <div className={toggleState === 2 ? `${CrewCSS.tab} ${CrewCSS.active}` : CrewCSS.tab} onClick={() => toggleTab(2)}></div>
               <div className={toggleState === 3 ? `${CrewCSS.tab} ${CrewCSS.active}` : CrewCSS.tab} onClick={() => toggleTab(3)}></div>
+              <div className={CrewCSS.navigation}>
+                { toggleState !== 0 && <img className={`${CrewCSS.leftArrow} ${CrewCSS.noSelect}`} src={right} alt="right-arrow" width="32px" height="32px" onClick={() => goPrev()}/>}
+                {toggleState !== 3 && <img className={`${CrewCSS.rightArrow} ${CrewCSS.noSelect}`} src={right} alt="left-arrow" width="32px" height="32px" onClick={() => goNext()}/>}
+              </div>
             </div>
 
             <div className={CrewCSS.contentTab}>

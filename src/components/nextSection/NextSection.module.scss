@@ -2,6 +2,9 @@
   cursor: pointer;
   place-self: end;
   z-index: 1000;
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
 }
 
 .nextSection h3 {
