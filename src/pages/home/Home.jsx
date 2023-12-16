@@ -2,11 +2,13 @@
 import HomeCSS from "./Home.module.scss";
 import Header from "../../components/header/Header";
 import { useNavigate } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 import video from "./space.mp4";
 
-const Home = ({ pathNote, setPathNote }) => {
+const Home = ({ pathNote, setPathNote}) => {
+
+    const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
         setPathNote(0);
@@ -21,10 +23,13 @@ const Home = ({ pathNote, setPathNote }) => {
 
     return (
         <div className={HomeCSS.home}>
-            <video autoPlay muted loop playsInline className={HomeCSS.myVideo}>
+            <div className={isLoading? HomeCSS.loaderWrapper : `${HomeCSS.loaderWrapper} ${HomeCSS.loaded}`}>
+                <div className={HomeCSS.homeLoader}></div>
+            </div>
+            <video autoPlay muted loop playsInline className={HomeCSS.myVideo} onLoadedData={() => setIsLoading(false)}>
                 <source src={video} type="video/mp4" />
             </video>
-            <Header pathNote={pathNote} setPathNote={setPathNote} />
+            <Header pathNote={pathNote} setPathNote={setPathNote}/>
             <div className={HomeCSS.content}>
                 <div className={HomeCSS.text}>
                     <h2>SO, YOU WANT TO TRAVEL TO</h2>

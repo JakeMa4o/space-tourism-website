@@ -5,6 +5,8 @@ import Media from 'react-media';
 import TechnologyCSS from "./Technology.module.scss";
 import Header from "../../components/header/Header";
 
+import { useOnLoadImages } from "../../hooks/useOnLoadImages";
+
 import launchVehicle from "./assets/technology/image-launch-vehicle-landscape.webp";
 import launchVehiclePortrait from "./assets/technology/image-launch-vehicle-portrait.webp"
 import spaceCapsule from "./assets/technology/image-space-capsule-landscape.webp";
@@ -12,9 +14,13 @@ import spaceCapsulePortrait from "./assets/technology/image-space-capsule-portra
 import spaceport from "./assets/technology/image-spaceport-landscape.webp";
 import spaceportProtrait from "./assets/technology/image-spaceport-portrait.webp";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
+import Loader from "../../components/loader/Loader";
 
 const Technology = ({ pathNote, setPathNote }) => {
+
+  const wrapperRef = useRef(null);
+  const imagesLoad = useOnLoadImages(wrapperRef)
 
   useEffect(() => {
     setPathNote(3);
@@ -27,7 +33,8 @@ const Technology = ({ pathNote, setPathNote }) => {
   }
 
   return (
-    <div className={TechnologyCSS.technology}>
+    <div className={TechnologyCSS.technology} ref={wrapperRef}>
+      <Loader imagesLoad={imagesLoad} />
       <Header pathNote={pathNote} setPathNote={setPathNote} />
       <div className={TechnologyCSS.content}>
         <h2><span>03</span>Space launch 101</h2>

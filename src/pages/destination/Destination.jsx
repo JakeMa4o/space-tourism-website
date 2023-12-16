@@ -1,15 +1,24 @@
 /* eslint-disable react/prop-types */
 import DestinationCSS from "./Destination.module.scss";
+
 import Header from "../../components/header/Header";
-// import Tabs from "../../components/tabs/Tabs";
+import NextSection from "../../components/nextSection/NextSection";
+
 import moon from "./assets/destination/image-moon.webp";
 import mars from "./assets/destination/image-mars.webp";
 import europa from "./assets/destination/image-europa.webp";
 import titan from "./assets/destination/image-titan.webp";
-import { useEffect, useState } from "react";
-import NextSection from "../../components/nextSection/NextSection";
+
+import { useOnLoadImages } from "../../hooks/useOnLoadImages";
+
+import { useEffect, useState, useRef } from "react";
+import Loader from "../../components/loader/Loader";
 
 const Destination = ({ pathNote, setPathNote }) => {
+
+  const wrapperRef = useRef(null);
+  const imagesLoad = useOnLoadImages(wrapperRef)
+
   useEffect(() => {
     setPathNote(1);
   }, [])
@@ -21,7 +30,8 @@ const Destination = ({ pathNote, setPathNote }) => {
   }
 
   return (
-    <div className={DestinationCSS.destination}>
+    <div className={DestinationCSS.destination} ref={wrapperRef}>
+      <Loader imagesLoad={imagesLoad} />
       <Header pathNote={pathNote} setPathNote={setPathNote} />
       <div className={DestinationCSS.content}>
         <h2><span>01</span>Pick your destination</h2>

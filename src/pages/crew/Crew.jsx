@@ -3,15 +3,22 @@ import CrewCSS from "./Crew.module.scss";
 import Header from "../../components/header/Header";
 import NextSection from "../../components/nextSection/NextSection";
 
+import { useOnLoadImages } from "../../hooks/useOnLoadImages";
+
 import anousheh from "./assets/crew/image-anousheh-ansari.webp";
 import douglas from "./assets/crew/image-douglas-hurley.webp";
 import mark from "./assets/crew/image-mark-shuttleworth.webp";
 import victor from "./assets/crew/image-victor-glover.webp";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
+import Loader from "../../components/loader/Loader";
 
 
 const Crew = ({ pathNote, setPathNote }) => {
+
+  const wrapperRef = useRef(null);
+  const imagesLoad = useOnLoadImages(wrapperRef)
+
   useEffect(() => {
     setPathNote(2);
   }, [])
@@ -24,7 +31,8 @@ const Crew = ({ pathNote, setPathNote }) => {
 
 
   return (
-    <div className={CrewCSS.crew}>
+    <div className={CrewCSS.crew} ref={wrapperRef}>
+      <Loader imagesLoad={imagesLoad} />
       <Header pathNote={pathNote} setPathNote={setPathNote} />
       <div className={CrewCSS.content}>
         <h2><span>02</span>Meet your crew</h2>
