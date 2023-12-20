@@ -1,7 +1,7 @@
 import LoaderCss from "./Loader.module.scss";
 
 // eslint-disable-next-line react/prop-types
-const Loader = ({imagesLoad }) => {
+const Loader = ({imagesLoad}) => {
   return (
     // <div className={LoaderCss.loaderWrapper}>
     //   <div className={LoaderCss.loader}></div>

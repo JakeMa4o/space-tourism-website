@@ -8,11 +8,12 @@
   display: grid;
   place-items: center;
   z-index: 10000;
-  transition: transform 1s .1s ease;
+  transition: all .5s .1s ease;
 }
 
 .loaderWrapper.loaded {
-  transform: translateX(-100%);
+  transform: translateY(-100%);
+  opacity: 0.5;
 }
 
 .loaderWrapper.loaded .loader {

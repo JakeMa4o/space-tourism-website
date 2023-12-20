@@ -5,10 +5,11 @@ import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 import video from "./space.mp4";
+import Loader from "../../components/loader/Loader";
 
 const Home = ({ pathNote, setPathNote}) => {
 
-    const [isLoading, setIsLoading] = useState(true);
+    const [isLoading, setIsLoading] = useState(false);
 
     useEffect(() => {
         setPathNote(0);
@@ -23,11 +24,9 @@ const Home = ({ pathNote, setPathNote}) => {
 
     return (
         <div className={HomeCSS.home}>
-            <div className={isLoading? HomeCSS.loaderWrapper : `${HomeCSS.loaderWrapper} ${HomeCSS.loaded}`}>
-                <div className={HomeCSS.homeLoader}></div>
-            </div>
+            <Loader imagesLoad={isLoading}/>
             <div className={HomeCSS.videoFilter}></div>
-            <video autoPlay muted loop playsInline className={HomeCSS.myVideo} onCanPlay={() => setIsLoading(false)}>
+            <video autoPlay muted loop playsInline className={HomeCSS.myVideo} onCanPlay={() => setIsLoading(true)}>
                 <source src={video} type="video/mp4" />
             </video>
             <Header pathNote={pathNote} setPathNote={setPathNote}/>
