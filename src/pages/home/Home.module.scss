@@ -264,8 +264,13 @@
 // Desktop
 
 @media (min-width: 1440px) {
+    .videoFilter {
+        background-color: transparent;
+    }
+
     .home {
         // background-image: url(./assets/home/background-home-desktop.webp);
+        background-color: none;
 
         .content {
             padding-top: 15.6rem;
